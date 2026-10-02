@@ -1,0 +1,122 @@
+<div class="container mt-5">
+
+  <div class="row justify-content-center">
+
+    <div class="col-lg-6">
+
+      <div class="card shadow-lg border-0">
+
+        <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0">
+            Registro de Clientes
+          </h4>
+        </div>
+
+
+        <div class="card-body">
+
+          <form [formGroup]="clienteForm" (ngSubmit)="guardar()">
+
+
+            <div class="mb-3">
+
+              <label class="form-label fw-bold">
+                Tipo de Documento
+              </label>
+
+              <select formControlName="clnTpoIdnId">
+                    <option [ngValue]="null" disabled selected>Seleccione...</option>
+                    <option *ngFor="let tipo of tipoDocumento" [ngValue]="tipo.tpoIdnId">
+                        {{ tipo.tpoIdnCodigo }} - {{ tipo.tpoIdnNombre}}
+                    </option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label fw-bold">
+                Documento
+              </label>
+
+              <input
+                formControlName="clnNumeroIdentificacion"
+                class="form-control"
+                placeholder="Ingrese Documento">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-bold">
+                  Razon Social
+                </label>
+                <input
+                  formControlName="clRazonSocial"
+                  class="form-control"
+                  placeholder="Ingrese Razon Social">
+            </div>
+
+            <div class="mb-3">
+
+              <label class="form-label fw-bold">
+                Pais
+              </label>
+
+              <select formControlName="paisCodigo" (change)="cambioPais()">
+                    <option [ngValue]="null" disabled selected>Seleccione...</option>
+                    <option *ngFor="let pais of paises" [ngValue]="pais.paisCodigo">
+                         {{ pais.paisNombre}}
+                    </option>
+              </select>
+            </div>
+            <div class="mb-3">
+
+              <label class="form-label fw-bold">
+                Departamento
+              </label>
+
+              <select formControlName="departamentoCodigo" (change)="cambioDepartamento()" >
+                    <option [ngValue]="null" disabled selected>Seleccione...</option>
+                    <option *ngFor="let dpt of departamentos" [ngValue]="dpt.dptColCodigoDane">
+                         {{ dpt.dptColNombredelDepartamento}}
+                    </option>
+              </select>
+            </div>
+
+             <div class="mb-3">
+
+              <label class="form-label fw-bold">
+                Municipio
+              </label>
+
+              <select formControlName="clnDvsPltColCodigoDane">
+                    <option [ngValue]="null" disabled selected>Seleccione...</option>
+                    <option *ngFor="let municipio of municipios" [ngValue]="municipio.dvsPltColCodigoDane">
+                         {{municipio.dvsPltColNombreMunicipio}}
+                    </option>
+              </select>
+            </div>
+
+
+            <div class="d-grid mt-4">
+
+              <button
+                class="btn btn-success btn-lg"
+                type="submit">
+
+                Guardar Cliente
+
+              </button>
+
+            </div>
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+

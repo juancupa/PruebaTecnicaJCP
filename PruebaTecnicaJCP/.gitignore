@@ -1,0 +1,26 @@
+﻿## Visual Studio
+.vs/
+bin/
+obj/
+
+## Archivos de usuario
+*.user
+*.rsuser
+*.suo
+
+## Logs
+*.log
+
+## Resultados de pruebas
+TestResults/
+
+## Publicaciones
+publish/
+
+## Rider (si alguna vez lo usas)
+.idea/
+
+## VS Code (opcional)
+.vscode/
+
+local.settings.json
